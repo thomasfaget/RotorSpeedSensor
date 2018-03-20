@@ -1,0 +1,13 @@
+<!-- A rounded border for components -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#ffffff"/>
+            <corners android:radius="10dp" />
+            <stroke
+                android:width="3dp"
+                android:color="#3bbdfa"
+                />
+        </shape>
+    </item>
+</selector>

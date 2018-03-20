@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+apply plugin: 'de.mobilej.unmock'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.2"
+    defaultConfig {
+        applicationId "fr.enseeiht.rotorspeedsensor"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions"
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories { jcenter() }
+
+
+buildscript {
+    repositories { jcenter() }
+
+    dependencies {
+        classpath 'de.mobilej.unmock:UnMockPlugin:0.6.2'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+})
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:support-v13:27.0.2'
+    compile 'com.jjoe64:graphview:4.2.1'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.7.22'
+    testCompile 'org.powermock:powermock-api-mockito:1.6.1'
+    testCompile 'org.powermock:powermock-module-junit4-rule-agent:1.6.1'
+    testCompile 'org.powermock:powermock-module-junit4-rule:1.6.1'
+    testCompile 'org.powermock:powermock-module-junit4:1.6.1'
+    androidTestCompile 'org.mockito:mockito-android:2.7.22'
+    unmock 'org.robolectric:android-all:4.3_r2-robolectric-0'
+}
+
+unMock {
+    keep "android.widget.BaseAdapter"
+    keep "android.widget.ArrayAdapter"
+    keep "android.os.Bundle"
+    keepStartingWith "android.database.MatrixCursor"
+    keep "android.database.AbstractCursor"
+    keep "android.database.CrossProcessCursor"
+    keepStartingWith "android.text.TextUtils"
+    keepStartingWith "android.util."
+    keepStartingWith "android.text."
+    keepStartingWith "android.content.ContentValues"
+    keepStartingWith "android.content.ComponentName"
+    keepStartingWith "android.content.ContentUris"
+    keepStartingWith "android.content.ContentProviderOperation"
+    keepStartingWith "android.content.ContentProviderResult"
+    keepStartingWith "android.content.UriMatcher"
+    keepStartingWith "android.content.Intent"
+    keep "android.location.Location"
+    keepStartingWith "android.content.res.Configuration"
+    keepStartingWith "org."
+    keepStartingWith "libcore."
+    keepStartingWith "com.android.internal.R"
+    keepStartingWith "com.android.internal.util."
+    keep "android.net.Uri"
+
+    keepAndRename "java.nio.charset.Charsets" to "xjava.nio.charset.Charsets"
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rotor Speed Sensor</string>
+    <string name="record">Record</string>
+    <string name="stop">Stop</string>
+    <string name="description_info">Info</string>
+    <string name="permission_request">This sample needs permission for camera and audio recording.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="start_video">Start</string>
+    <string name="button">Button</string>
+    <string name="help">Help</string>
+    <string name="speed">Speed :</string>
+    <string name="rpm">0 r.p.m.</string>
+    <string name="zoomPlus">+</string>
+    <string name="zoomLess">-</string>
+    <string name="fps">0 fps</string>
+    <string name="frameComputed">0/100</string>
+    <string name="status">status</string>
+    <string name="positionateROI">Please drag and drop or resize the rectangle to match the mark\'s passage</string>
+    <string name="return_">return</string>
+    <string name="debug">Debug</string>
+</resources>

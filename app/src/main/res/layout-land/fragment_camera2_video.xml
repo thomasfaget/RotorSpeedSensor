@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+        <fr.enseeiht.rotorspeedsensor.AutoFitTextureView
+            android:id="@+id/texture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <fr.enseeiht.rotorspeedsensor.RegionOfInterestView
+            android:id="@+id/roiView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/lowerBar"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/currentFPS"
+                android:layout_width="44dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.01"
+                android:ems="10"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="--- FPS"
+                android:textColor="@color/light_font"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/currentStatus"
+                android:layout_width="44dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.90"
+                android:ems="10"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="@string/positionateROI"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/processedFrames"
+                android:layout_width="19dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.08"
+                android:ems="10"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="133/701"
+                android:textColor="@color/light_font"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lowerBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom|center_horizontal">
+
+            <ImageButton
+                android:id="@+id/video"
+                style="@android:style/Widget.Material.Light.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:contentDescription="@string/description_info"
+                android:padding="20dp"
+                android:src="@drawable/ic_play" />
+
+            <ImageButton
+                android:id="@+id/info"
+                style="@android:style/Widget.Material.Light.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:contentDescription="@string/description_info"
+                android:padding="20dp"
+                android:src="@drawable/ic_action_info" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
